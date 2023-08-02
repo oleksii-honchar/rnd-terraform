@@ -28,14 +28,25 @@ module "vpc" {
 module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "5.2.1"
-  count   = 2
 
-  name = "my-ec2-cluster"
+  count = 1
+  name  = "my-ec2-cluster-${count.index}"
 
   ami                    = "ami-09af72ad2a3676ba8"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
+
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "olho.rnd.terraform.website-s3"
 
   tags = {
     Terraform   = "true"

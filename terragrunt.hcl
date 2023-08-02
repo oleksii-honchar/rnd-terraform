@@ -40,7 +40,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      hashicorp-learn = "module-use"
+      ResourceGroup = "terraform-rnd"
     }
   }
 }
