@@ -3,6 +3,20 @@
 
 # Input variable definitions
 
+variable "tags" {
+  description = "Tags to set on the bucket."
+  type        = map(string)
+  default     = {
+    Project = "static-website"
+    Environment = "development"
+  }
+}
+variable "bucket_name" {
+  description = "Name of the s3 bucket. Must be unique."
+  type        = string
+  default = "olho.rnd.web-s3-content"
+}
+
 variable "vpc_name" {
   description = "Name of VPC"
   type        = string

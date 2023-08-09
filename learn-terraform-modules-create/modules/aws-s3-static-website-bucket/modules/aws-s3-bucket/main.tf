@@ -1,16 +1,7 @@
-terraform {
-  required_version = "1.5.4"
-
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.11"
-    }
-  }
-}
 
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
+  tags = var.tags
 }
 
 resource "aws_s3_bucket_cors_configuration" "content" {
