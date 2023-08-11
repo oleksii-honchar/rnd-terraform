@@ -16,3 +16,9 @@ variable "bucket_name" {
   type        = string
   default = "olho.rnd.web-s3-content"
 }
+
+variable "static_path" {
+  description = "Local relative path containing files to upload to website bucket"
+  type        = string
+  default     = "static"
+}
