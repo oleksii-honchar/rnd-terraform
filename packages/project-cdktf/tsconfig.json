@@ -1,6 +1,26 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./configs/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": [ "esnext"],
+    "module": "CommonJS",
+    "paths": {
+      "src/*": [ "./src/*" ],
+      "scripts/*": [ "./scripts/*" ],
+      "blablo": ["./scripts/blablo.ts"],
+      "package.json": ["./package.json"]
+    },
+    "target": "esnext",
+  },
+  "include": [
+    "./**/*"
+  ],
   "exclude": [
+    "./node_modules",
+    "./dist",
+    "./docs",
+    "./coverage",
+    "./devops",
     "cdktf.out"
   ]
 }

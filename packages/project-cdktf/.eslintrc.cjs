@@ -16,7 +16,6 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/typescript",
     // "plugin:node/recommended", - enable only for node projects/folders
-    "plugin:react/recommended",
     "plugin:you-dont-need-lodash-underscore/compatible"
   ],
   rules: {
@@ -49,8 +48,6 @@ module.exports = {
         printWidth: 120,
       },
     ],
-    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
-    "react/react-in-jsx-scope": 0,
     "quote-props": ["error", "consistent-as-needed"],
   },
   env: {
@@ -67,10 +64,6 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "node", "prettier", "import"],
   settings: {
-    react: {
-      pragma: "h",
-      version: "detect",
-    },
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
