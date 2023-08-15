@@ -1,10 +1,11 @@
 {
   "language": "typescript",
-  "app": "npx ts-node main.ts",
+  "app": "npx ts-node --project ./tsconfig.json -r tsconfig-paths/register ./src/main.ts",
   "projectId": "dcaeee22-b245-4846-868e-ae972ccc9adb",
   "sendCrashReports": "true",
   "terraformProviders": [],
-  "terraformModules": [],
+  "terraformModules": [
+  ],
   "context": {
 
   }

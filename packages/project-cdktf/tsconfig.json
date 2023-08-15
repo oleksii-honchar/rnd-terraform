@@ -1,26 +1,26 @@
 {
-  "extends": "./configs/tsconfig.base.json",
+  "extends": "./.configs/tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./",
-    "lib": [ "esnext"],
+    "lib": [
+      "es2022"
+    ],
     "module": "CommonJS",
     "paths": {
-      "src/*": [ "./src/*" ],
+      ".gen/*": [ "./.gen/*" ],
+      "cdktf-stacks/*": [ "./cdktf-stacks/*" ],
+      "cdktf-constructs/*": [ "./cdktf-constructs/*" ],
       "scripts/*": [ "./scripts/*" ],
       "blablo": ["./scripts/blablo.ts"],
+      "defaults.ts": ["./defaults.ts"],
       "package.json": ["./package.json"]
     },
-    "target": "esnext",
+    "target": "es2022",
   },
   "include": [
-    "./**/*"
+    "**/*.ts"
   ],
   "exclude": [
-    "./node_modules",
-    "./dist",
-    "./docs",
-    "./coverage",
-    "./devops",
+    "node_modules",
     "cdktf.out"
   ]
 }

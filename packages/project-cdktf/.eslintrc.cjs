@@ -22,6 +22,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "import/namespace": "off",
     "class-methods-use-this": "off",
     "dot-notation": ["error", { allowPattern: "^(code)$" }],
     "function-paren-newline": ["error", "consistent"],
@@ -70,7 +72,7 @@ module.exports = {
     },
     "import/resolver": {
       typescript: {
-        directory: "./configs/tsconfig.es2022.json",
+        directory: "./.configs/tsconfig.es2022.json",
       },
       node: true,
     },
