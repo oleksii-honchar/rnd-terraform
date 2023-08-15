@@ -35,3 +35,13 @@ This a template for project CDKTF configuration. `Project` here mean set of appl
     npm install --global cdktf-cli@latest
     cdktf init --template="typescript" --providers="aws@~>4.0"
     ```
+  
+# Development
+
+- Compose all your stacks in App (main.ts)
+- Describe constructs and stacks in corresponding folders
+- Apply code
+  ```bash
+  cdktf plan
+  cdktf synth
+  ```
